@@ -18,7 +18,7 @@ var server = http.createServer(function(req, res) {
     
 });
 
-server.listen(process.env.C9_PORT);
+server.listen(process.env.VCAP_APP_PORT || process.env.C9_PORT);
 var io = require("socket.io").listen(server);
 io.set("log level", 2);
 
@@ -29,7 +29,11 @@ io.sockets.on("connection", function(socket) {
         data.id = id;
         io.sockets.emit("cursor", data);
     });
-    
+
+    socket.on("chat", function(data) {
+        io.sockets.emit("chat", { id: id, value: data });
+    });
+
     socket.on("click", function() {
         io.sockets.emit("click", id);
     });

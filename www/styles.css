@@ -33,4 +33,35 @@ h1 {
     margin: -20px -20px;
     border-radius: 20px;
 }
-    
+
+#chat_input {
+    left: -1000px;
+    top: -1000px;
+    width: 150px;
+    height: 18px;
+    padding: 4px 0;
+    position: absolute;
+}
+
+.chat_out {
+    width: 170px;
+    height: 70px;
+    overflow: auto;
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.chat_msg {
+    font-family: Arial;
+    font-size: 12px;
+    padding: 2px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+}
+
+.user_img {
+    position: absolute;
+    border-radius: 3px;
+}
